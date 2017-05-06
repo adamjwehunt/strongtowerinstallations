@@ -156,13 +156,98 @@ a, a:hover, a:active, a:visited, a:focus {
 
 //ui wrapper
 .main-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
+  // max-width: 1200px;
+  // margin: 0 auto;
   margin-top: 10px;
   // z-index: -1;
   // position: relative;
 }
 
+//hero
+
+.hero {
+    height: 462px;
+    max-height: 462px;
+    text-align: center;
+    background-image: url(../img/placeholder.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.hero, .hero .container {
+    position: relative;
+}
+.hero .container h1 {
+  font-size: 60px;
+  font-weight: 300;
+  text-align: center;
+  line-height: 82px;
+  color: #FFF;
+  position: absolute;
+  z-index: 1;
+  display: block;
+}
+
+.hero, .hero .container {
+  position: relative;
+}
+@media only screen and (min-width: 992px) {
+
+  .hero .container h1 {
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 82px;
+    color: #FFF;
+    position: relative;
+    z-index: 1;
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 320px) {
+
+  .hero .container h1 {
+    font-size: 36px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    font-weight: 300;
+    line-height: 48px;
+    color: #FFF;
+    position: relative;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    display: block;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .hero .container {
+    padding-top: 180px;
+  }
+
+}
+@media only screen and (min-width: 320px) {
+  .hero .container {
+    padding-top: 200px;
+    position: relative;
+  }
+
+}
+@media only screen and (min-width: 992px) {
+  .hero {
+    height: 462px;
+    max-height: 462px;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 320px) {
+  .hero {
+    height: 462px;
+    max-height: 462px;
+    position: relative;
+  }
+}
 
 
 // home view
