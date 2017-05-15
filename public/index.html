@@ -28,6 +28,18 @@
   <link rel='stylesheet' href='./dist/all.css'/>
 </head>
   <body ng-controller='mainCtrl'>
+    <!-- facebook like btn -->
+    <div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=902009893274771";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- header -->
     <header>
       <div class="contact-bar">
         <div class="call-now">
@@ -66,10 +78,12 @@
           </div>
         </div>
     </header>
+    <!-- main -->
     <div class="main-wrapper">
       <ui-view>
       </ui-view>
     </div>
+    <!-- footer -->
     <footer>
       <div class="container footer-info">
         <div class="row">
@@ -129,7 +143,10 @@
                 <a href="https://www.facebook.com/strongtoweraz/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
               </li>
               <li>
-                <a href="https://linkedin.com/in/strongtoweraz/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <div class="fb-like" data-href="https://www.facebook.com/strongtoweraz/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+              </li>
+              <li>
+                <a class="thumbtack-mini widget ng-scope" ng-href="https://www.thumbtack.com/-Gilbert-AZ/service/2365712" target="_blank" href="https://www.thumbtack.com/-Gilbert-AZ/service/2365712"> <img style="" ng-src="https://static.thumbtackstatic.com/media/pages/profile/standard-widgets/pro-svg/inline.svg" src="https://static.thumbtackstatic.com/media/pages/profile/standard-widgets/pro-svg/inline.svg"></a><script src='https://www.thumbtack.com/profile/widgets/scripts/?service_id=VdWDwQ9cRc4Uaw&widget_id=profile'></script>
               </li>
             </ul>
           </div>
@@ -142,7 +159,7 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src='extras/owl.carousel.min.js'></script>
     <script src="extras/angular-owl-carousel-2.js"></script>

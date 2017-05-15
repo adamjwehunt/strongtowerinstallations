@@ -425,11 +425,15 @@ p, a, h1, h2, h3, h4, h5, h6, button, p, a, li {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+html {
+  overflow-x: hidden; }
+
 body {
   background: #f4f4f4;
   color: #333;
   line-height: 24px;
-  font-size: 14px; }
+  font-size: 14px;
+  overflow-x: hidden; }
 
 header {
   z-index: 100; }
@@ -443,6 +447,9 @@ a {
 
 a, a:hover, a:active, a:visited, a:focus {
   text-decoration: none; }
+
+hr {
+  border-top: 3px solid #a7090a !important; }
 
 .container {
   margin-right: auto;
@@ -748,6 +755,13 @@ a, a:hover, a:active, a:visited, a:focus {
 #products-carousel .owl-dots {
   margin-top: 12px; }
 
+#products-carousel .item {
+  height: 70px; }
+
+#products-carousel .item img {
+  height: 32px;
+  width: auto; }
+
 footer .container {
   background-color: #fff; }
 
@@ -849,6 +863,38 @@ footer .container {
 .footer-social .sociallinks li a {
   font-size: 18px; }
 
+.fb-like {
+  margin-top: 5px;
+  margin-right: 10px;
+  margin: 5px 10px 0 10px; }
+
+.thumbtack-mini img {
+  height: 20px; }
+
+@media (max-width: 767px) {
+  header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0; }
+  .navbar-main {
+    height: auto; }
+  .navbar-main img {
+    height: 50px; }
+  .navigation {
+    display: none; }
+  .contact-bar {
+    width: 100%;
+    height: 30px;
+    padding-top: 6px; }
+  .main-wrapper {
+    margin-top: 90px; }
+  .hamburger-btn {
+    display: block; } }
+
+.footer-social {
+  padding-top: 20px; }
+
 @media only screen and (min-width: 320px) {
   .services-pack {
     padding: 50px 14px; }
@@ -886,7 +932,9 @@ footer .container {
     width: 730px; }
   .footer-social .footer-info, .footer-social .sociallinks {
     display: block;
-    margin-top: 8px; } }
+    margin-top: 8px; }
+  #products-carousel .item img {
+    height: 50px; } }
 
 @media only screen and (min-width: 992px) {
   .footer-social .footerlinks {
@@ -901,27 +949,3 @@ footer .container {
   .container {
     width: 1200px;
     padding: 0; } }
-
-@media (max-width: 767px) {
-  header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0; }
-  .navbar-main {
-    height: auto; }
-  .navbar-main img {
-    height: 50px; }
-  .navigation {
-    display: none; }
-  .contact-bar {
-    width: 100%;
-    height: 30px;
-    padding-top: 6px; }
-  .main-wrapper {
-    margin-top: 90px; }
-  .hamburger-btn {
-    display: block; } }
-
-.footer-social {
-  padding-top: 20px; }

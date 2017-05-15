@@ -23,21 +23,26 @@ angular.module('strongtower')
   };
 
   $scope.owlpropertiesPartners = {
-      items: 3,
+    center: true,
+      items: 1,
       autoplay: true,
-      autoplayTimeout: 5000,
-      autoplaySpeed: 100,
-      dots: true,
+      autoplayTimeout: 2000,
+      autoplaySpeed: 900,
+      dots: false,
       loop: true,
       nav: true,
-      margin: 10,
-      slideBy: 'page',
+      margin: 90,
+      autoWidth:true,
       responsive: {
         768: {
-          items: 4
+          dots: true,
+          items: 2,
+          margin: 85
         },
         1200: {
-          items: 6
+          dots: true,
+          items: 4,
+          margin: 100
         }
       },
       navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>']

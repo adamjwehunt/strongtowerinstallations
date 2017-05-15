@@ -2,6 +2,7 @@ angular.module('strongtower', ['ui.router', 'angular-owl-carousel-2', 'sticky'])
 .config(function ($stateProvider, $urlRouterProvider) {
 
 
+
 $stateProvider
   .state('home', {
     url:'/',
@@ -38,3 +39,11 @@ $stateProvider
     .otherwise('/')
 
 })
+
+.run(function($rootScope, $state, $document, $stateParams) {
+   $rootScope.$state = $state;
+   $rootScope.$stateParams = $stateParams;
+   $rootScope.$on('$stateChangeSuccess', function() {
+     $document[0].body.scrollTop = $document[0].documentElement.scrollTop = 0;
+   });
+ })
