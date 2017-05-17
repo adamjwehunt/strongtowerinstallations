@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('strongtower', ['ui.router', 'angular-owl-carousel-2', 'sticky']).config(function ($stateProvider, $urlRouterProvider) {
+angular.module('strongtower', ['ui.router', 'ngAnimate', 'angular-owl-carousel-2', 'sticky']).config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider.state('home', {
     url: '/',

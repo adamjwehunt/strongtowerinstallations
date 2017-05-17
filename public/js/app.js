@@ -1,4 +1,4 @@
-angular.module('strongtower', ['ui.router', 'angular-owl-carousel-2', 'sticky'])
+angular.module('strongtower', ['ui.router', 'ngAnimate', 'angular-owl-carousel-2', 'sticky'])
 .config(function ($stateProvider, $urlRouterProvider) {
 
 

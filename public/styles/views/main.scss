@@ -172,6 +172,29 @@ hr {
   // position: relative;
 }
 
+.fade {
+  display: block;
+  opacity: 1;
+}
+.fade.ng-enter,
+.fade.ng-leave {
+    -webkit-transition: all .2s ease;
+    transition: all 200ms cubic-bezier(.645,.045,.355,1);
+}
+.fade.ng-enter {
+    opacity: 0;
+}
+.fade.ng-enter-active {
+    opacity: 1;
+}
+.fade.ng-leave {
+    opacity: 1;
+}
+.fade.ng-leave-active {
+    opacity: 0;
+}
+
+
 //hero
 
 .hero {
@@ -441,7 +464,48 @@ hr {
   width: auto;
 }
 
+// testimonials
+.review1 {
+  display: flex;
+justify-content: center;
 
+}
+
+// about us
+
+.first-letter {
+    color: #a7090a;
+    font-size: 36px;
+}
+
+.quote p:first-child {
+    font-weight: 300;
+    font-style: italic;
+}
+.quote p, .quote p:first-child {
+    font-size: 23px;
+    text-align: left;
+    line-height: 32px;
+}
+@media only screen and (min-width: 768px) {
+  .quote p {
+    font-size: 23px;
+    font-weight: 300;
+    font-style: italic;
+    text-align: left;
+    line-height: 32px;
+  }
+
+}
+@media only screen and (min-width: 320px) {
+
+  .quote p {
+    text-align: center;
+  }
+  .quote p {
+    font-weight: 700;
+  }
+}
 
 
 // footer
