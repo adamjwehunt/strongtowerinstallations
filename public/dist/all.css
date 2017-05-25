@@ -420,6 +420,14 @@ textarea {
 p, a, h1, h2, h3, h4, h5, h6, button, p, a, li {
   font-family: 'Open Sans', sans-serif; }
 
+.temp {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px; }
+
+.temp img {
+  height: 200px; }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
