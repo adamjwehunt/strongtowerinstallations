@@ -1,12 +1,3 @@
-.temp {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-
-.temp img {
-  height: 200px;
-}
 
 // global
 
@@ -391,6 +382,28 @@ hr {
   background-color: #fff;
   box-shadow: 0 3px 30px 5px rgba(0,0,0,.15);
 }
+.services-pack button {
+  display: block;
+  margin: 10px auto 50px;
+  border: 0;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 22px;
+  letter-spacing: 2px;
+  transition: background .2s ease-in-out,color .2s ease-in-out,box-shadow .2s ease-in-out;
+  box-shadow: 0 12px 19px 0 rgba(0, 0, 0, 0.24);
+  background: #a7090a;
+  color: #FFF;
+}
+
+.services-pack button:hover {
+      box-shadow: 0 5px 15px 0 rgba(0,0,0,.5);
+      text-decoration: none;
+}
 
 .services-pack  h2 {
   padding: 0 10%;
@@ -655,11 +668,6 @@ justify-content: center;
     padding-top: 25px;
 }
 
-.form-one-holder form button, .form-one-holder form button.pink-orange {
-    background: #a7090a;
-    color: #FFF;
-}
-
 .form-one-holder form button:hover, .form-two-holder .submitbutton:hover {
     box-shadow: 0 5px 15px 0 rgba(0,0,0,.5);
     text-decoration: none;
@@ -710,6 +718,8 @@ justify-content: center;
     letter-spacing: 2px;
     transition: background .2s ease-in-out,color .2s ease-in-out,box-shadow .2s ease-in-out;
     box-shadow: 0 12px 19px 0 rgba(0,0,0,.24);
+    background: #a7090a;
+    color: #FFF;
 }
 
 // footer
