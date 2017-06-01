@@ -454,8 +454,15 @@ hr {
 
 }
 
-.recent-socialmedia {
+.plugin-container {
+  display: flex;
+  justify-content: center;
+  background: #a7090a;
+  // border: solid 60px #a7090a;
+}
 
+.fbplugin {
+  margin: 10px 0;
 }
 
 .our-partners {

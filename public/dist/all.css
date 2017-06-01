@@ -783,6 +783,14 @@ hr {
 .services-pack .service-title {
   margin: 15px 0; }
 
+.plugin-container {
+  display: flex;
+  justify-content: center;
+  background: #a7090a; }
+
+.fbplugin {
+  margin: 10px 0; }
+
 .our-partners {
   display: block; }
 
