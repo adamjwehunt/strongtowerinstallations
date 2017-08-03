@@ -4,6 +4,7 @@ angular.module('strongtower')
   // nav btns
   $scope.activeBtn = function (activeClass) {
     if ($state.current.name === activeClass) {
+
       return true
     }
   };
@@ -11,6 +12,7 @@ angular.module('strongtower')
 
   // Owl Carousel
   $scope.owlitems = [];
+
   $scope.owlproperties = {
       items: 1,
       autoplay: true,

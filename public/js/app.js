@@ -11,7 +11,7 @@ $stateProvider
   })
 
   .state('services', {
-    url:'/services',
+    url:'/services/:scrollTo',
     controller: 'mainCtrl',
     templateUrl: '../views/services.html'
   })
@@ -40,10 +40,11 @@ $stateProvider
 
 })
 
-.run(function($rootScope, $state, $document, $stateParams) {
-   $rootScope.$state = $state;
-   $rootScope.$stateParams = $stateParams;
-   $rootScope.$on('$stateChangeSuccess', function() {
-     $document[0].body.scrollTop = $document[0].documentElement.scrollTop = 0;
-   });
- })
+.run(function($rootScope, $location, $anchorScroll, $stateParams, $timeout) {
+  $rootScope.$on('$stateChangeSuccess', function(newRoute, oldRoute) {
+    $timeout(function() {
+      $location.hash($stateParams.scrollTo);
+      $anchorScroll()
+    }, 10)
+  });
+})

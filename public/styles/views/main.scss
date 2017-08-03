@@ -217,6 +217,18 @@ hr {
     opacity: 0;
 }
 
+.carousel-content {
+  background: #000;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  opacity: 0.6;
+}
+.owl-carousel .owl-stage-outer {
+  max-height: 750px;
+}
 
 //hero
 
@@ -228,6 +240,27 @@ hr {
     background-size: cover;
     background-position: center;
 }
+
+.hero.services-img {
+  background-image: url(../img/stocks/hometheatre_1.jpg);
+}
+.hero.contact-img {
+  background-image: url(../img/stocks/hometheatre_1.jpg);
+}
+.hero.about-img {
+  background-image: url(../img/stocks/hometheatre_1.jpg);
+}
+.hero.testimonials-img {
+  background-image: url(../img/stocks/hometheatre_1.jpg);
+}
+
+.hero-filter {
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0.6;
+}
+
 .hero, .hero .container {
     position: relative;
 }
@@ -457,12 +490,14 @@ hr {
 .plugin-container {
   display: flex;
   justify-content: center;
-  background: #a7090a;
+  background: #fff;
   // border: solid 60px #a7090a;
 }
 
 .fbplugin {
   margin: 10px 0;
+  border: solid 20px #a7090a;
+
 }
 
 .our-partners {

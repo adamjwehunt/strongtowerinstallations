@@ -7,7 +7,7 @@ angular.module('strongtower', ['ui.router', 'ngAnimate', 'angular-owl-carousel-2
     controller: 'mainCtrl',
     templateUrl: '../views/home.html'
   }).state('services', {
-    url: '/services',
+    url: '/services/:scrollTo',
     controller: 'mainCtrl',
     templateUrl: '../views/services.html'
   }).state('about', {
@@ -25,11 +25,12 @@ angular.module('strongtower', ['ui.router', 'ngAnimate', 'angular-owl-carousel-2
   });
 
   $urlRouterProvider.otherwise('/');
-}).run(function ($rootScope, $state, $document, $stateParams) {
-  $rootScope.$state = $state;
-  $rootScope.$stateParams = $stateParams;
-  $rootScope.$on('$stateChangeSuccess', function () {
-    $document[0].body.scrollTop = $document[0].documentElement.scrollTop = 0;
+}).run(function ($rootScope, $location, $anchorScroll, $stateParams, $timeout) {
+  $rootScope.$on('$stateChangeSuccess', function (newRoute, oldRoute) {
+    $timeout(function () {
+      $location.hash($stateParams.scrollTo);
+      $anchorScroll();
+    }, 10);
   });
 });
 
@@ -49,6 +50,7 @@ angular.module('strongtower').controller('mainCtrl', function ($scope, $timeout,
   // nav btns
   $scope.activeBtn = function (activeClass) {
     if ($state.current.name === activeClass) {
+
       return true;
     }
   };
@@ -56,6 +58,7 @@ angular.module('strongtower').controller('mainCtrl', function ($scope, $timeout,
 
   // Owl Carousel
   $scope.owlitems = [];
+
   $scope.owlproperties = {
     items: 1,
     autoplay: true,
