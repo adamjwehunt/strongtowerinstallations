@@ -492,11 +492,20 @@ hr {
   justify-content: center;
   background: #fff;
   // border: solid 60px #a7090a;
+  background-image: url("../img/cross-red-black-outline.png");
+  background-repeat: no-repeat;
+background-size: contain;
+
+    justify-content: center;
+
+
 }
 
 .fbplugin {
   margin: 10px 0;
-  border: solid 20px #a7090a;
+  // border: solid 20px #a7090a;
+  box-shadow: 0 3px 30px 5px rgba(0, 0, 0, 0.15);
+
 
 }
 
@@ -601,7 +610,7 @@ hr {
 .desktile {
     background-color: #fff;
     border-bottom: 2px solid #f4f4f4;
-    padding: 100px 0;
+    padding: 70px 0;
     display: block;
     cursor: pointer;
     position: relative;
@@ -668,7 +677,7 @@ justify-content: center;
 
 // contact us
 .contact-body .container {
-  padding: 100px 0;
+  padding: 70px 0;
   background-color: #fff;
 }
 @media only screen and (min-width: 320px) {
@@ -696,7 +705,7 @@ justify-content: center;
 @media only screen and (min-width: 992px) {
 
   .contact-body .container {
-    padding: 100px 0;
+    padding: 70px 0;
     background-color: #fff;
   }
 }
@@ -940,7 +949,11 @@ footer .container {
 @media only screen and (min-width: 320px) {
   .services-pack {
     padding: 50px 14px;
+    &.plugin-container {
+      padding: 70px 0 10px;
+    }
   }
+
   .footer-social .footerlinks {
     max-width: 350px;
     display: block;
@@ -978,6 +991,9 @@ footer .container {
   }
   .services-pack {
     padding: 50px 14px;
+    &.plugin-container {
+      padding: 70px 0 10px;
+    }
   }
   .container {
     width: 730px;
@@ -997,6 +1013,10 @@ footer .container {
   }
   .services-pack {
     padding: 50px 0;
+
+    &.plugin-container {
+      padding: 70px 0 10px;
+    }
   }
   .container {
     width: inherit;
