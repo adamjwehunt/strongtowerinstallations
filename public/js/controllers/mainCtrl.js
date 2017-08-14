@@ -50,6 +50,24 @@ angular.module('strongtower')
       navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>']
   };
 
+  //Facebook Plugin
+  $scope.pluginOn = true;
+  $scope.rendering = false;
+
+  $scope.rendered = function () {
+    $scope.rendering = false;
+  };
+
+  $scope.$watch('pluginOn', function (newVal, oldVal) {
+    if (newVal !== oldVal) {
+      $scope.rendering = true;
+    }
+  });
+
+  $scope.$on('$routeChangeSuccess', function () {
+    $scope.rendering = true;
+  });
+
 })
 // (function(d, s, id) {
 //   var js, fjs = d.getElementsByTagName(s)[0];

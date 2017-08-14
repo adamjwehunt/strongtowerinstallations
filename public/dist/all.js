@@ -1,6 +1,11 @@
 'use strict';
 
-angular.module('strongtower', ['ui.router', 'ngAnimate', 'angular-owl-carousel-2', 'sticky']).config(function ($stateProvider, $urlRouterProvider) {
+angular.module('strongtower', ['ui.router', 'ngAnimate', 'angular-owl-carousel-2', 'sticky', 'ezfb']).config(function ($stateProvider, $urlRouterProvider, ezfbProvider) {
+
+  ezfbProvider.setInitParams({
+    appId: '902009893274771',
+    version: 'v2.6'
+  });
 
   $stateProvider.state('home', {
     url: '/',
@@ -34,16 +39,25 @@ angular.module('strongtower', ['ui.router', 'ngAnimate', 'angular-owl-carousel-2
   });
 });
 
-// $(document).ready(function(){
-//   $(".owl-carousel").owlCarousel({
-//     items: 1,
-//     loop: true,
-//     center: true,
-//     dots: false,
-//     autoplay: true,
-//     autoplaySpeed: 1000
+// angular.module('strongtower')
+//
+// .config(function (ezfbProvider, $routeProvider) {
+//   ezfbProvider.setInitParams({
+//     appId: '902009893274771',
+//     version: 'v2.6'
+//   });
+
+// $routeProvider.otherwise({redirectTo: '/video'});
+//
+// angular.forEach(SOCIAL_PLUGINS, function (dirTag) {
+//   var routeName = dirTag;
+//
+//   $routeProvider
+//   .when('/' + routeName, {
+//     templateUrl: routeName + '.html'
 //   });
 // });
+// })
 
 angular.module('strongtower').controller('mainCtrl', function ($scope, $timeout, $state) {
 
@@ -95,6 +109,24 @@ angular.module('strongtower').controller('mainCtrl', function ($scope, $timeout,
     },
     navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>']
   };
+
+  //Facebook Plugin
+  $scope.pluginOn = true;
+  $scope.rendering = false;
+
+  $scope.rendered = function () {
+    $scope.rendering = false;
+  };
+
+  $scope.$watch('pluginOn', function (newVal, oldVal) {
+    if (newVal !== oldVal) {
+      $scope.rendering = true;
+    }
+  });
+
+  $scope.$on('$routeChangeSuccess', function () {
+    $scope.rendering = true;
+  });
 });
 // (function(d, s, id) {
 //   var js, fjs = d.getElementsByTagName(s)[0];

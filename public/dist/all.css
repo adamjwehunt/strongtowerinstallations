@@ -617,7 +617,7 @@ hr {
   background-position: center; }
 
 .hero.services-img {
-  background-image: url(../img/stocks/hometheatre_1.jpg); }
+  background-image: url(../img/main_services.jpg); }
 
 .hero.contact-img {
   background-image: url(../img/stocks/hometheatre_1.jpg); }
@@ -816,7 +816,7 @@ hr {
 .plugin-container {
   display: flex;
   justify-content: center;
-  background: #fff;
+  background: #dbd7d4;
   background-image: url("../img/cross-red-black-outline.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -1171,7 +1171,7 @@ footer .container {
   .services-pack {
     padding: 50px 14px; }
     .services-pack.plugin-container {
-      padding: 70px 0 10px; }
+      padding: 10px 0 10px; }
   .footer-social .footerlinks {
     max-width: 350px;
     display: block;
@@ -1203,7 +1203,7 @@ footer .container {
   .services-pack {
     padding: 50px 14px; }
     .services-pack.plugin-container {
-      padding: 70px 0 10px; }
+      padding: 20px 0 20px; }
   .container {
     width: 730px; }
   .footer-social .footer-info, .footer-social .sociallinks {
@@ -1218,7 +1218,7 @@ footer .container {
   .services-pack {
     padding: 50px 0; }
     .services-pack.plugin-container {
-      padding: 70px 0 10px; }
+      padding: 30px 0 30px; }
   .container {
     width: inherit;
     padding: 0 10px; } }

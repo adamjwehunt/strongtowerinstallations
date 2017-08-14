@@ -1,38 +1,41 @@
-angular.module('strongtower', ['ui.router', 'ngAnimate', 'angular-owl-carousel-2', 'sticky'])
-.config(function ($stateProvider, $urlRouterProvider) {
+angular.module('strongtower', ['ui.router', 'ngAnimate', 'angular-owl-carousel-2', 'sticky', 'ezfb'])
+.config(function ($stateProvider, $urlRouterProvider, ezfbProvider) {
 
+  ezfbProvider.setInitParams({
+    appId: '902009893274771',
+    version: 'v2.6'
+  });
 
+  $stateProvider
+    .state('home', {
+      url:'/',
+      controller: 'mainCtrl',
+      templateUrl: '../views/home.html'
+    })
 
-$stateProvider
-  .state('home', {
-    url:'/',
-    controller: 'mainCtrl',
-    templateUrl: '../views/home.html'
-  })
+    .state('services', {
+      url:'/services/:scrollTo',
+      controller: 'mainCtrl',
+      templateUrl: '../views/services.html'
+    })
 
-  .state('services', {
-    url:'/services/:scrollTo',
-    controller: 'mainCtrl',
-    templateUrl: '../views/services.html'
-  })
+    .state('about', {
+      url:'/about',
+      controller: 'mainCtrl',
+      templateUrl: '../views/about.html'
+    })
 
-  .state('about', {
-    url:'/about',
-    controller: 'mainCtrl',
-    templateUrl: '../views/about.html'
-  })
+    .state('testimonials', {
+      url:'/testimonials',
+      controller: 'mainCtrl',
+      templateUrl: '../views/testimonials.html'
+    })
 
-  .state('testimonials', {
-    url:'/testimonials',
-    controller: 'mainCtrl',
-    templateUrl: '../views/testimonials.html'
-  })
-
-  .state('contact', {
-    url:'/contact',
-    controller: 'mainCtrl',
-    templateUrl: '../views/contact.html'
-  })
+    .state('contact', {
+      url:'/contact',
+      controller: 'mainCtrl',
+      templateUrl: '../views/contact.html'
+    })
 
 
   $urlRouterProvider
