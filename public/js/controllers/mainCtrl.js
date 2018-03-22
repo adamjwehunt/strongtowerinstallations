@@ -1,26 +1,45 @@
 angular.module('strongtower')
-.controller('mainCtrl', function ($scope, $timeout, $state) {
+.controller('mainCtrl', function ($scope, $timeout, $state, $location, $anchorScroll) {
 
   // nav btns
   $scope.activeBtn = function (activeClass) {
     if ($state.current.name === activeClass) {
-
       return true
     }
   };
   $scope.activeBtn()
 
+  //mobile btn
+  $scope.menuState = 'collapsed'
+  $scope.toggleNav = function () {
+    let menuState = $scope.menuState
+    $scope.menuState = 'collapsing';
+    if (menuState === 'collapsed') {
+      $scope.menuHeight = "'height' : '259px'"
+    } else if (menuState === 'expanded') {
+      $scope.menuHeight = "'height' : '1px'"        
+    }
+
+    $timeout(function () {
+      if (menuState === 'collapsed') {
+        menuState = 'expanded';
+      } else  if (menuState === 'expanded') {
+        menuState = 'collapsed';
+      }
+      $scope.menuState = menuState;
+    }, 0)
+  };
+
   // Owl Carousel
   $scope.owlitems = [];
-
   $scope.owlproperties = {
       items: 1,
       autoplay: true,
-      autoplayTimeout: 4000,
+      autoplayTimeout: 6000,
       autoplaySpeed: 800,
       dots: false,
       loop: true,
-      nav: true,
+      nav: false,
       navText: ['<div class="btn-circle"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>','<div class="btn-circle"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>']
   };
 

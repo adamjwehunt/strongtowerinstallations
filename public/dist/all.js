@@ -1,7 +1,6 @@
 'use strict';
 
 angular.module('strongtower', ['ui.router', 'ngAnimate', 'angular-owl-carousel-2', 'sticky', 'ezfb']).config(function ($stateProvider, $urlRouterProvider, ezfbProvider) {
-
   ezfbProvider.setInitParams({
     appId: '902009893274771',
     version: 'v2.6'
@@ -30,13 +29,23 @@ angular.module('strongtower', ['ui.router', 'ngAnimate', 'angular-owl-carousel-2
   });
 
   $urlRouterProvider.otherwise('/');
-}).run(function ($rootScope, $location, $anchorScroll, $stateParams, $timeout) {
+}).run(function ($rootScope, $location, $anchorScroll, $stateParams, $timeout, $window) {
   $rootScope.$on('$stateChangeSuccess', function (newRoute, oldRoute) {
     $timeout(function () {
       $location.hash($stateParams.scrollTo);
       $anchorScroll();
     }, 10);
   });
+
+  $rootScope.isSmallViewport = $window.innerWidth < 767;
+  $rootScope.updateWidth = function () {
+    $rootScope.isSmallViewport = $window.innerWidth < 767;
+  };
+
+  $window.onresize = function () {
+    $rootScope.updateWidth();
+    $rootScope.$apply();
+  };
 });
 
 // angular.module('strongtower')
@@ -59,28 +68,47 @@ angular.module('strongtower', ['ui.router', 'ngAnimate', 'angular-owl-carousel-2
 // });
 // })
 
-angular.module('strongtower').controller('mainCtrl', function ($scope, $timeout, $state) {
+angular.module('strongtower').controller('mainCtrl', function ($scope, $timeout, $state, $location, $anchorScroll) {
 
   // nav btns
   $scope.activeBtn = function (activeClass) {
     if ($state.current.name === activeClass) {
-
       return true;
     }
   };
   $scope.activeBtn();
 
+  //mobile btn
+  $scope.menuState = 'collapsed';
+  $scope.toggleNav = function () {
+    var menuState = $scope.menuState;
+    $scope.menuState = 'collapsing';
+    if (menuState === 'collapsed') {
+      $scope.menuHeight = "'height' : '259px'";
+    } else if (menuState === 'expanded') {
+      $scope.menuHeight = "'height' : '1px'";
+    }
+
+    $timeout(function () {
+      if (menuState === 'collapsed') {
+        menuState = 'expanded';
+      } else if (menuState === 'expanded') {
+        menuState = 'collapsed';
+      }
+      $scope.menuState = menuState;
+    }, 0);
+  };
+
   // Owl Carousel
   $scope.owlitems = [];
-
   $scope.owlproperties = {
     items: 1,
     autoplay: true,
-    autoplayTimeout: 4000,
+    autoplayTimeout: 6000,
     autoplaySpeed: 800,
     dots: false,
     loop: true,
-    nav: true,
+    nav: false,
     navText: ['<div class="btn-circle"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>', '<div class="btn-circle"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>']
   };
 
